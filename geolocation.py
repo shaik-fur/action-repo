@@ -7,15 +7,14 @@ import pandas as pd
 
 class Address:
 
-    def __init__(self, area, zone='East zone', city='Bangalore', country='India'):
+    def __init__(self, area, city='Bangalore', country='India'):
         self.area = area
-        self.zone = zone
         self.city = city
         self.country = country
 
     def coord(self):
         nom = Nominatim(user_agent="Mozilla/5.0")
-        address = f"{self.area+', '+self.zone+', '+self.city+', '+self.country}"
+        address = f"{self.area+', '+self.city+', '+self.country}"
         loc = nom.geocode(address)
         return loc
 
