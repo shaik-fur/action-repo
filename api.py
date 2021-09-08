@@ -4,14 +4,14 @@ from geolocation import Address, GeoLoc, distance, polyzones, df2
 
 app = FastAPI()
 
-'''http://127.0.0.1:8000/API?area=shampura&zone=east%20zone&city=bangalore&country=india&
-area1=govindapura&zone1=east%20zone&city1=bangalore&country1=india'''
-
+'''http://127.0.0.1:8000/API'''
+'''Address format source='potheri,chennai,India'
+dest='guindy,chennai,India' '''
 
 @app.post("/API")
-def read(dest1, dest2):
-    d1 = dest1.split(",")
-    d2 = dest2.split(",")
+def read(source, dest):
+    d1 = source.split(",")
+    d2 = dest.split(",")
     print(d1)
     print(d2)
     loc1 = Address(area=d1[0], city=d1[1], country=d1[2])
