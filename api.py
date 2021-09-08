@@ -12,8 +12,6 @@ dest='guindy,chennai,India' '''
 def read(source, dest):
     d1 = source.split(",")
     d2 = dest.split(",")
-    print(d1)
-    print(d2)
     loc1 = Address(area=d1[0], city=d1[1], country=d1[2])
     loc2 = Address(area=d2[0], city=d2[1], country=d2[2])
     geo = GeoLoc(loc1.coord().latitude, loc1.coord().longitude)
